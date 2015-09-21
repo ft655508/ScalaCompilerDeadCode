@@ -1,0 +1,4 @@
+<plugin>
+	<name> outputlinefile </name>
+	<classname> localhost.OutputLineFile</classname>
+</plugin>

@@ -1,0 +1,30 @@
+This is the package for Type 1 dead code detection. 
+
+OutputLineFile.scala: 
+This is the source code of compiler plugin. The compiler plugin runs right after compiler phase “typer”. It transform the original AST by inserting “println” statements after each data flow. So that the program can print out which data flow are executed.
+
+localhost:
+Folder for .class files of OutputFileLine.scala
+
+hello.scala, counter.scala:
+Testing files for the compiler plugin.
+
+classes  test.sh:
+Files for generating the compiler plugin from the source code.
+                  
+output.jar:
+The compiler plugin.
+
+extractDataFlow.scala:
+Tool for extracting data flows from the log file, which contains both data flows and line numbers of executed codes used by Type 1. To run extractDataFlow, just specify names of the log files.
+
+Searcher.scala: 
+Tool for searching the data flow file to find out the useless fragments. To run Searcher, two arguments are needed. The first one is the name of the data flow file. The second one is the starting node for the search, which is the name of an AST node in data flow file. It outputs the data flows which are touched during the search, these are useful data flows in the program.
+
+allSearcher.scala:
+This tool also carries on search on the data flow file. Unlike Searcher.scala. allSearcher takes every node on the right hand side in the data flow as starting nodes, and search for all these starting nodes until the file is finished or the search is broken. It prints out continuous data flow sequences with a size larger than the threshold value. allSearchers takes one argument, the name of data flow file.
+
+mapDataFlow.scala:
+Calculate Type 2 dead code ratio for each compiler source file. 
+
+To generate the compiler plugin, just need to run ./test.sh

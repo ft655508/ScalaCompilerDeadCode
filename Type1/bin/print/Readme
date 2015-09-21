@@ -1,0 +1,18 @@
+This is the package for Type 1 dead code detection. 
+
+OutputLineFile.scala: 
+This is the source code of compiler plugin. The compiler plugin runs right after compiler phase “typer”. It transform the original AST by inserting “println” statements after each line of the source code. So that the program can print out which codes are executed.
+
+localhost:
+Folder for .class files of OutputFileLine.scala
+
+hello.scala, counter.scala:
+Testing files for the compiler plugin.
+
+classes  test.sh:
+Files for generating the compiler plugin from the source code.
+                  
+output.jar:
+The compiler plugin.
+
+To generate the compiler plugin, just need to run ./test.sh

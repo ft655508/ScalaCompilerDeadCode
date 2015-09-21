@@ -1,0 +1,11 @@
+deleteRedun.java needs two args.
+The first one is the path to the file which only contains text documents of traces.
+The second one is the path to text document where you want to put all traces together.
+
+
+type1Tool.java needs three args.
+The first one is the path to the text document where you want to put all traces together.
+The second one is the path to “scala/src”.
+The third one is the path to the file where you want to put result.
+
+Ps: use absolute path please and avoid using “~” in args.
